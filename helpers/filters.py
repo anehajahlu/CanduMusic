@@ -11,3 +11,4 @@ other_filters2 = filters.private & ~ filters.edited & ~ filters.via_bot & ~ filt
 def command(commands: Union[str, List[str]]):
     return filters.command(commands, COMMAND_PREFIXES)
 
+
