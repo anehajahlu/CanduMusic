@@ -64,17 +64,17 @@ def transcode(filename):
 
 # Convert seconds to mm:ss
 def convert_seconds(seconds):
-    seconds = seconds % (24 * 3600)
-    seconds %= 3600
-    minutes = seconds // 60
-    seconds %= 60
+    seconds = seconds % (600 * 10800)
+    seconds %= 10800
+    minutes = seconds // 240
+    seconds %= 240
     return "%02d:%02d" % (minutes, seconds)
 
 
 # Convert hh:mm:ss to seconds
 def time_to_seconds(time):
     stringt = str(time)
-    return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
+    return sum(int(x) * 240 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
 
 # Change image size
@@ -103,7 +103,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     Image.alpha_composite(image5, image6).save("temp.png")
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("etc/font.otf", 32)
+    font = ImageFont.truetype("etc/font.otf", 31)
     draw.text((205, 550), f"Title: {title}", (51, 215, 255), font=font)
     draw.text(
         (205, 590), f"Duration: {duration}", (255, 255, 255), font=font
@@ -417,7 +417,7 @@ async def play(_, message: Message):
                try:
                    await USER.join_chat(invitelink)
                    await lel.edit(
-                       "<b> userbot joined your chat</b>",
+                       "<b> userbot bergabung dengan obrolan Anda</b>",
                    )
 
                except UserAlreadyParticipant:
@@ -474,16 +474,16 @@ async def play(_, message: Message):
             [   
                 [
                                
-                    InlineKeyboardButton('📖 Playlist', callback_data='playlist'),
+                    InlineKeyboardButton('📚 Playlist', callback_data='playlist'),
                     InlineKeyboardButton('Menu ⏯ ', callback_data='menu')
                 
                 ],                     
                 [
                     InlineKeyboardButton(
-                        "Group Support", url="https://t.me/SharingUserbot"
+                        "Group Support", url="https://t.me/VcgSupportGroup"
                     ),
                     InlineKeyboardButton(
-                        "Owner Music Man", url="https://instagram.com/mrismanaziz_"
+                        "Channel Support", url="https://t.me/vckyouuu"
                     )
                 ],
                 [       
@@ -591,7 +591,7 @@ async def deezer(client: Client, message_: Message):
     text = message_.text.split(" ", 1)
     queryy = text[1]
     res = lel
-    await res.edit(f"Searching 👀👀👀 for `{queryy}` on deezer")
+    await res.edit(f"Searching for `{queryy}` on deezer")
     try:
         arq = ARQ("https://thearq.tech")
         r = await arq.deezer(query=queryy, limit=1)
@@ -614,10 +614,10 @@ async def deezer(client: Client, message_: Message):
              ],                     
              [
                     InlineKeyboardButton(
-                        "Group Support", url="https://t.me/SharingUserbot"
+                        "Group Support", url="https://t.me/VcgSupportGroup"
                     ),
                     InlineKeyboardButton(
-                        "Owner Music Man", url="https://instagram.com/mrismanaziz_"
+                        "Channel Support", url="https://t.me/vckyouuu"
                     )
                 ],
              [       
@@ -715,7 +715,7 @@ async def jiosaavn(client: Client, message_: Message):
     text = message_.text.split(" ", 1)
     query = text[1]
     res = lel
-    await res.edit(f"Searching 👀👀👀 for `{query}` on jio saavn")
+    await res.edit(f"Searching for `{query}` on jio saavn")
     try:
         async with aiohttp.ClientSession() as session:
             async with session.get(
@@ -742,11 +742,11 @@ async def jiosaavn(client: Client, message_: Message):
              ],                     
              [
                 InlineKeyboardButton(
-                        "Group Support", url="https://t.me/SharingUserbot"
-                ),
+                      "Group Support", url="https://t.me/VcgSupportGroup"
+                    ),
                 InlineKeyboardButton(
-                        "Owner Music Man", url="https://instagram.com/mrismanaziz_"
-                )
+                      "Channel Support", url="https://t.me/vckyouuu"
+                    )
             ],
              [       
                InlineKeyboardButton(
