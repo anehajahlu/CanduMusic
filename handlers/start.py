@@ -16,13 +16,13 @@ Tekan tombol » [📚 Penjelasan & Perintah BOT 📚](https://telegra.ph/text-04
             [ 
                 [
                     InlineKeyboardButton(
-                        "⚡ Owner ⚡", url="https://t.me/VckyouuBitch")
+                        "⚡ My Instagram ⚡", url="https://www.instagram.com/Vckyouuu")
                   ],[
                     InlineKeyboardButton(
                         "🛡️ Group Support", url="https://t.me/VcgSupportGroup"
                     ),
                     InlineKeyboardButton(
-                        "📣 Support Channel", url="https://t.me/Vckyouuu"
+                        "📣 Channel Support", url="https://t.me/Vckyouuu"
                     )
                 ]
             ]
@@ -32,7 +32,7 @@ Tekan tombol » [📚 Penjelasan & Perintah BOT 📚](https://telegra.ph/text-04
 
 @Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
-      await message.reply_text("""**▹ Pemutar Musik Sedang Online **""",
+      await message.reply_text("""**▹ Pemutar Musik Sedang Online**""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -49,7 +49,7 @@ async def gstart(_, message: Message):
 
 @Client.on_message(filters.command("reload") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
-      await message.reply_text("""✅ **Pemutar Musik Sedang Online **""",
+      await message.reply_text("""✅ **Pemutar Musik Sedang Online**""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
