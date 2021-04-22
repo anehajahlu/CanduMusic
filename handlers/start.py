@@ -6,18 +6,23 @@ from config import BOT_NAME as bn
 @Client.on_message(filters.command("start") & filters.private & ~filters.channel)
 async def start(_, message: Message):
     await message.reply_text(
-        f"""Halo 👋! Saya dapat memutar musik dalam obrolan suara Grup Telegram.\n\n▹ Apakah Anda ingin saya memutar musik di obrolan suara grup Telegram Anda? Silakan klik \'📚 Panduan Menggunakan BOT 📚\' tombol di bawah untuk mengetahui bagaimana cara menggunakan saya.\n\n📚 Tambahkan [Candu Assistant Music](https://t.me/@CanduMusicBot) ke grup Anda untuk memutar musik di obrolan suara grup Anda.\n\n▹ Info & perintah selengkapnya yang disebutkan di [Cara & Menggunakan](https://telegra.ph/BOT-Music-Man-Voice-Chat-Group-04-16)\n\nManaged By [Vckyyy](https://t.me/VckyouuBitch)""",
+        f"""✨ Selamat Datang!
+
+Bot Music adalah proyek yang dirancang untuk memutar, secara sesederhana mungkin, musik dalam grup anda melalui obrolan suara yang baru diperkenalkan oleh Telegram.
+
+❓Bagaimana cara menggunakannya?
+Tekan tombol » 📚 Perintah untuk melihat daftar lengkap perintah bot!""",
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
                     InlineKeyboardButton(
-                        "📚 Panduan Menggunakan Bot 📚", url="https://t.me/Lunatic0de/20")
+                        "📚 Penjelasan & Printah Bot", url="https://t.me/Lunatic0de/20")
                   ],[
                     InlineKeyboardButton(
-                        "🛡️ Group Support 🛡️", url="https://t.me/VcgSupportGroup"
+                        "🛡️ Group Support", url="https://t.me/VcgSupportGroup"
                     ),
                     InlineKeyboardButton(
-                        "📣 Support Channel 📣", url="https://t.me/Vckyouuu"
+                        "📣 Support Channel", url="https://t.me/Vckyouuu"
                     )
                 ]
             ]
