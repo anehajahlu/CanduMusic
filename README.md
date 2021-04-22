@@ -2,7 +2,7 @@
 
 ### A bot that can play music on telegram group's voice call
 
-# Available on telegram as @SharingUserbot
+# Available on telegram as @VcgSupportGroup
 
 <h2> Features : </h2>
 
