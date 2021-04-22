@@ -480,11 +480,9 @@ async def play(_, message: Message):
                 ],                     
                 [
                     InlineKeyboardButton(
-                        "Group Support", url="https://t.me/VcgSupportGroup"
-                    ),
-                    InlineKeyboardButton(
-                        "Channel Support", url="https://t.me/vckyouuu"
-                    )
+                        text="Channel Support",
+                        url=f"https://t.me/Vckyouuu")
+
                 ],
                 [       
                     InlineKeyboardButton(
@@ -607,27 +605,27 @@ async def deezer(client: Client, message_: Message):
         is_playing = False
         return
     keyboard = InlineKeyboardMarkup(
-         [   
-             [
-                 InlineKeyboardButton('📚 Playlist', callback_data='playlist'),
-                 InlineKeyboardButton('Menu ⏯ ', callback_data='menu')     
-             ],                     
-             [
+            [   
+                [
+                               
+                    InlineKeyboardButton('📚 Playlist', callback_data='playlist'),
+                    InlineKeyboardButton('Menu ⏯ ', callback_data='menu')
+                
+                ],                     
+                [
                     InlineKeyboardButton(
-                        "Group Support", url="https://t.me/VcgSupportGroup"
-                    ),
-                    InlineKeyboardButton(
-                        "Channel Support", url="https://t.me/vckyouuu"
-                    )
-                ],
-             [       
-                 InlineKeyboardButton(
-                     text="❌ Close",
-                     callback_data='cls')
+                        text="Channel Support",
+                        url=f"https://t.me/Vckyouuu")
 
-            ]                      
-         ]
-     )
+                ],
+                [       
+                    InlineKeyboardButton(
+                        text="❌ Close",
+                        callback_data='cls')
+
+                ]                             
+            ]
+        )
     file_path= await converter.convert(wget.download(url))
     await res.edit("Generating Thumbnail")
     await generate_cover(requested_by, title, artist, duration, thumbnail)
@@ -735,27 +733,27 @@ async def jiosaavn(client: Client, message_: Message):
         is_playing = False
         return
     keyboard = InlineKeyboardMarkup(
-         [   
-             [
-               InlineKeyboardButton('📚 Playlist', callback_data='playlist'),
-               InlineKeyboardButton('Menu ⏯ ', callback_data='menu')   
-             ],                     
-             [
-                InlineKeyboardButton(
-                      "Group Support", url="https://t.me/VcgSupportGroup"
-                    ),
-                InlineKeyboardButton(
-                      "Channel Support", url="https://t.me/vckyouuu"
-                    )
-            ],
-             [       
-               InlineKeyboardButton(
-                   text="❌ Close",
-                   callback_data='cls')
+            [   
+                [
+                               
+                    InlineKeyboardButton('📚 Playlist', callback_data='playlist'),
+                    InlineKeyboardButton('Menu ⏯ ', callback_data='menu')
+                
+                ],                     
+                [
+                    InlineKeyboardButton(
+                        text="Channel Support",
+                        url=f"https://t.me/Vckyouuu")
 
-            ]                          
-         ]
-     )
+                ],
+                [       
+                    InlineKeyboardButton(
+                        text="❌ Close",
+                        callback_data='cls')
+
+                ]                             
+            ]
+        )
     file_path= await converter.convert(wget.download(slink))
     if message_.chat.id in callsmusic.pytgcalls.active_calls:
         position = await queues.put(message_.chat.id, file=file_path)
