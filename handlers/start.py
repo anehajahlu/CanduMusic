@@ -54,7 +54,7 @@ async def gstart(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "Group Support", url="https://t.me//t.me/VcgSupportGroup"
+                        "Group Support", url="https://t.me/VcgSupportGroup"
                     ),
                     InlineKeyboardButton(
                         "Channel Support", url="https://t.me/Vckyouuu"
