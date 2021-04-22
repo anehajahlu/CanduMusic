@@ -1,4 +1,4 @@
-<h1 align="centre">🎵 BOT MUSIC MAN 🎵</h1>
+<h1 align="centre">🎵 Candu Music</h1>
 
 ### A bot that can play music on telegram group's voice call
 
