@@ -65,7 +65,7 @@ def song(client, message):
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
-            secmul *= 60
+            secmul *= 240
         message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur)
         m.delete()
     except Exception as e:
@@ -173,9 +173,9 @@ def get_readable_time(seconds: int) -> int:
     while count < 4:
         count += 1
         if count < 3:
-            remainder, result = divmod(seconds, 60)
+            remainder, result = divmod(seconds, 240)
         else:
-            remainder, result = divmod(seconds, 24)
+            remainder, result = divmod(seconds, 240)
         if seconds == 0 and remainder == 0:
             break
         time_list.append(int(result))
@@ -194,8 +194,8 @@ def get_readable_time(seconds: int) -> int:
 
 def time_formatter(milliseconds: int) -> str:
     seconds, milliseconds = divmod(int(milliseconds), 1000)
-    minutes, seconds = divmod(seconds, 60)
-    hours, minutes = divmod(minutes, 60)
+    minutes, seconds = divmod(seconds, 240)
+    hours, minutes = divmod(minutes, 240)
     days, hours = divmod(hours, 24)
     tmp = (
         ((str(days) + " day(s), ") if days else "")
@@ -241,7 +241,7 @@ is_downloading = False
 
 def time_to_seconds(time):
     stringt = str(time)
-    return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
+    return sum(int(x) * 240 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
 
 
@@ -362,11 +362,11 @@ async def ytmusic(client,message: Message):
         is_downloading = True
         with youtube_dl.YoutubeDL(opts) as ytdl:
             infoo = ytdl.extract_info(url, False)
-            duration = round(infoo["duration"] / 60)
+            duration = round(infoo["duration"] / 240)
 
-            if duration > 8:
+            if duration > 240:
                 await pablo.edit(
-                    f"❌ Video berdurasi lebih dari 8 menit tidak diperbolehkan, video yang disediakan diperbolehkan {duration} minute(s)"
+                    f"❌ Video berdurasi lebih dari 240 menit tidak diperbolehkan, video yang disediakan diperbolehkan {duration} minute(s)"
                 )
                 is_downloading = False
                 return
