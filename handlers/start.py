@@ -11,12 +11,12 @@ async def start(_, message: Message):
 Bot Music adalah proyek yang dirancang untuk memutar, secara sesederhana mungkin, musik dalam grup anda melalui obrolan suara yang baru diperkenalkan oleh Telegram.
 
 ❓Bagaimana cara menggunakannya?
-Tekan tombol » 📚 Perintah untuk melihat daftar lengkap perintah bot!""",
+Tekan tombol » [📚 Penjelasan & Perintah BOT 📚](https://telegra.ph/text-04-22-3) untuk melihat daftar lengkap & Penjelasanya""",
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
                     InlineKeyboardButton(
-                        "📚 Penjelasan & Printah Bot", url="https://t.me/Lunatic0de/20")
+                        "⚡ Owner ⚡", url="https://t.me/VckyouuBitch")
                   ],[
                     InlineKeyboardButton(
                         "🛡️ Group Support", url="https://t.me/VcgSupportGroup"
