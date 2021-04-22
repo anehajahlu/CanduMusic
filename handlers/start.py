@@ -6,18 +6,18 @@ from config import BOT_NAME as bn
 @Client.on_message(filters.command("start") & filters.private & ~filters.channel)
 async def start(_, message: Message):
     await message.reply_text(
-        f"""Halo 👋! Saya dapat memutar musik dalam obrolan suara Grup Telegram.\n\n✣ Apakah Anda ingin saya memutar musik di obrolan suara grup Telegram Anda? Silakan klik \'📜 Panduan Menggunakan BOT 📜\' tombol di bawah untuk mengetahui bagaimana cara menggunakan saya.\n\n✣ Tambahkan [Assistant Music Man](https://t.me/botmusikman) ke grup Anda untuk memutar musik di obrolan suara grup Anda.\n\n✣ Info & perintah selengkapnya yang disebutkan di [User Manual](https://telegra.ph/BOT-Music-Man-Voice-Chat-Group-04-16)\n\nManaged With ☕️ By [Risman](https://t.me/mrismanaziz)""",
+        f"""Halo 👋! Saya dapat memutar musik dalam obrolan suara Grup Telegram.\n\n▹ Apakah Anda ingin saya memutar musik di obrolan suara grup Telegram Anda? Silakan klik \'📚 Panduan Menggunakan BOT 📚\' tombol di bawah untuk mengetahui bagaimana cara menggunakan saya.\n\n📚 Tambahkan [Candu Assistant Music](https://t.me/@CanduMusicBot) ke grup Anda untuk memutar musik di obrolan suara grup Anda.\n\n▹ Info & perintah selengkapnya yang disebutkan di [Cara & Menggunakan](https://telegra.ph/BOT-Music-Man-Voice-Chat-Group-04-16)\n\nManaged By [Vckyyy](https://t.me/VckyouuBitch)""",
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
                     InlineKeyboardButton(
-                        "📜 Panduan Menggunakan BOT 📜", url="https://t.me/Lunatic0de/20")
+                        "📚 Panduan Menggunakan Bot 📚", url="https://t.me/Lunatic0de/20")
                   ],[
                     InlineKeyboardButton(
-                        "Group Support", url="https://t.me/SharingUserbot"
+                        "🛡️ Group Support 🛡️", url="https://t.me/VcgSupportGroup"
                     ),
                     InlineKeyboardButton(
-                        "Channel", url="https://t.me/Lunatic0de"
+                        "📣 Support Channel 📣", url="https://t.me/Vckyouuu"
                     )
                 ]
             ]
@@ -27,15 +27,15 @@ async def start(_, message: Message):
 
 @Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
-      await message.reply_text("""**✣ Pemutar Musik Sedang Online ✣**""",
+      await message.reply_text("""**▹ Pemutar Musik Sedang Online **""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Group Support", url="https://t.me/SharingUserbot"
+                        "Group Support", url="https://t.me/VcgSupportGroup"
                     ),
                     InlineKeyboardButton(
-                        "Owner", url="https://t.me/mrismanaziz"
+                        "Channel Support", url="https://t.me/Vckyouuu"
                     )
                 ]
             ]
@@ -49,10 +49,10 @@ async def gstart(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "Group Support", url="https://t.me/SharingUserbot"
+                        "Group Support", url="https://t.me//t.me/VcgSupportGroup"
                     ),
                     InlineKeyboardButton(
-                        "Owner", url="https://t.me/mrismanaziz"
+                        "Channel Support", url="https://t.me/Vckyouuu"
                     )
                 ]
             ]
