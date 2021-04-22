@@ -49,3 +49,4 @@ async def inline(client: Client, query: InlineQuery):
                 switch_pm_text="Error: Waktu pencarian habis",
                 switch_pm_parameter="",
             )
+
