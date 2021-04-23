@@ -159,14 +159,23 @@ def r_ply(type_):
     else:
         ico = '⏸'
     mar = InlineKeyboardMarkup(
-        [
-                InlineKeyboardButton('📚 Daftar Lagu', 'playlist'),
+            [
+                [
+                    InlineKeyboardButton('⏹', 'leave'),
+                    InlineKeyboardButton('⏸', 'puse'),
+                    InlineKeyboardButton('▶️', 'resume'),
+                    InlineKeyboardButton('⏭', 'skip')
                 
-            ],
-            [       
-                InlineKeyboardButton("❌ Tutup ❌",'cls')
-        ]
-    )
+                ],
+                [
+                    InlineKeyboardButton('Playlist 📖', 'playlist'),
+                
+                ],
+                [       
+                    InlineKeyboardButton("❌ Close",'cls')
+                ]        
+            ]
+        )
     return mar
 
 @Client.on_message(
@@ -322,14 +331,23 @@ async def m_cb(b, cb):
         stats = updated_stats(cb.message.chat, qeue)  
         await cb.answer('Menu opened')
             marr = InlineKeyboardMarkup(
-        [
-                InlineKeyboardButton('📚 Daftar Lagu', 'playlist'),
+            [
+                [
+                    InlineKeyboardButton('⏹', 'leave'),
+                    InlineKeyboardButton('⏸', 'puse'),
+                    InlineKeyboardButton('▶️', 'resume'),
+                    InlineKeyboardButton('⏭', 'skip')
                 
-            ],
-            [       
-                InlineKeyboardButton("❌ Tutup ❌",'cls')
-        ]
-    )
+                ],
+                [
+                    InlineKeyboardButton('Playlist 📖', 'playlist'),
+                
+                ],
+                [       
+                    InlineKeyboardButton("❌ Close",'cls')
+                ]        
+            ]
+        )
         await cb.message.edit(stats, reply_markup=marr) 
     elif type_ == 'skip':        
         if qeue:
@@ -448,7 +466,7 @@ async def play(_, message: Message):
                 ],                     
                 [
                     InlineKeyboardButton(
-                        text="Channel Support",
+                        text="📣 Channel Support",
                         url=f"https://t.me/Vckyouuu")
 
                 ],
