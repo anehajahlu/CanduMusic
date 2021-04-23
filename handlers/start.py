@@ -93,7 +93,8 @@ async def gstart(_, message: Message):
                         "Group Support", url="https://t.me/VcgSupportGroup"
                     ),
                     InlineKeyboardButton(
-                        "Channel Support", url="https://t.me/Vckyouuu"
+                        text="❌ Close",
+                        callback_data='cls')
                     )
                 ]
             ]
