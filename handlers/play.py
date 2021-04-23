@@ -160,14 +160,6 @@ def r_ply(type_):
         ico = '⏸'
     mar = InlineKeyboardMarkup(
         [
-            [
-                InlineKeyboardButton('⏹', 'leave'),
-                InlineKeyboardButton('⏸', 'puse'),
-                InlineKeyboardButton('▶️', 'resume'),
-                InlineKeyboardButton('⏭', 'skip')
-                
-            ],
-            [
                 InlineKeyboardButton('📚 Daftar Lagu', 'playlist'),
                 
             ],
@@ -244,8 +236,6 @@ async def p_cb(b, cb):
         await cb.message.edit(msg)      
 
 @Client.on_callback_query(filters.regex(pattern=r'^(play|pause|skip|leave|puse|resume|menu|cls)$'))
-@errors
-@authorized_users_only
 async def m_cb(b, cb):
     global que    
     qeue = que.get(cb.message.chat.id)
@@ -332,24 +322,16 @@ async def m_cb(b, cb):
     elif type_ == 'menu':  
         stats = updated_stats(cb.message.chat, qeue)  
         await cb.answer('Menu opened')
-        marr = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton('⏹', 'leave'),
-                    InlineKeyboardButton('⏸', 'puse'),
-                    InlineKeyboardButton('▶️', 'resume'),
-                    InlineKeyboardButton('⏭', 'skip')
+            marr = InlineKeyboardMarkup(
+        [
+                InlineKeyboardButton('📚 Daftar Lagu', 'playlist'),
                 
-                ],
-                [
-                    InlineKeyboardButton('📚 Playlist', 'playlist'),
-                
-                ],
-                [       
-                    InlineKeyboardButton("❌ Close",'cls')
-                ]        
-            ]
-        )
+            ],
+            [       
+                InlineKeyboardButton("❌ Tutup ❌",'cls')
+            ]        
+        ]
+    )
         await cb.message.edit(stats, reply_markup=marr) 
     elif type_ == 'skip':        
         if qeue:
@@ -462,7 +444,7 @@ async def play(_, message: Message):
             [   
                 [
                                
-                    InlineKeyboardButton('📚 Playlist', callback_data='playlist'),
+                    InlineKeyboardButton('📚 Daftar Lagu', callback_data='playlist'),
                     InlineKeyboardButton('Menu ⏯ ', callback_data='menu')
                 
                 ],                     
@@ -474,7 +456,7 @@ async def play(_, message: Message):
                 ],
                 [       
                     InlineKeyboardButton(
-                        text="❌ Close",
+                        text="❌ Tutup ❌",
                         callback_data='cls')
 
                 ]                             
@@ -596,7 +578,7 @@ async def deezer(client: Client, message_: Message):
             [   
                 [
                                
-                    InlineKeyboardButton('📚 Playlist', callback_data='playlist'),
+                    InlineKeyboardButton('📚 Daftar lagu', callback_data='playlist'),
                     InlineKeyboardButton('Menu ⏯ ', callback_data='menu')
                 
                 ],                     
@@ -608,7 +590,7 @@ async def deezer(client: Client, message_: Message):
                 ],
                 [       
                     InlineKeyboardButton(
-                        text="❌ Close",
+                        text="❌ Tutup ❌",
                         callback_data='cls')
 
                 ]                             
@@ -736,7 +718,7 @@ async def jiosaavn(client: Client, message_: Message):
                 ],
                 [       
                     InlineKeyboardButton(
-                        text="❌ Close",
+                        text="❌ Tutup ❌",
                         callback_data='cls')
 
                 ]                             
