@@ -165,7 +165,6 @@ def r_ply(type_):
             ],
             [       
                 InlineKeyboardButton("❌ Tutup ❌",'cls')
-            ]        
         ]
     )
     return mar
@@ -329,7 +328,6 @@ async def m_cb(b, cb):
             ],
             [       
                 InlineKeyboardButton("❌ Tutup ❌",'cls')
-            ]        
         ]
     )
         await cb.message.edit(stats, reply_markup=marr) 
@@ -459,7 +457,7 @@ async def play(_, message: Message):
                         text="❌ Tutup ❌",
                         callback_data='cls')
 
-                ]                             
+                ]  
             ]
         )
     requested_by = message.from_user.first_name
