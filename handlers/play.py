@@ -168,11 +168,11 @@ def r_ply(type_):
                 
             ],
             [
-                InlineKeyboardButton('📚 Playlist', 'playlist'),
+                InlineKeyboardButton('📚 Daftar Lagu', 'playlist'),
                 
             ],
             [       
-                InlineKeyboardButton("❌ Close ❌",'cls')
+                InlineKeyboardButton("❌ Tutup ❌",'cls')
             ]        
         ]
     )
@@ -244,6 +244,8 @@ async def p_cb(b, cb):
         await cb.message.edit(msg)      
 
 @Client.on_callback_query(filters.regex(pattern=r'^(play|pause|skip|leave|puse|resume|menu|cls)$'))
+@errors
+@authorized_users_only
 async def m_cb(b, cb):
     global que    
     qeue = que.get(cb.message.chat.id)
