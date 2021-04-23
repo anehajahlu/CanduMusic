@@ -26,4 +26,5 @@ async def start(_, message: Message):
 /skip - Untuk Menskip pemutaran lagu ke Lagu berikutnya
 /end - Untuk Memberhentikan pemutaran Lagu
 /userbotjoin - Untuk Mengundang asisten ke obrolan Anda
-/admincache - Untuk MemRefresh admin list"""
+/admincache - Untuk MemRefresh admin list""",
+
