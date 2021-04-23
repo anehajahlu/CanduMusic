@@ -40,20 +40,7 @@ from config import que
 from Python_ARQ import ARQ
 import json
 import wget
-chat_id = None
-
-           
-
-
-def cb_admin_check(func: Callable) -> Callable:
-    async def decorator(client, cb):
-        admemes = a.get(cb.message.chat.id)
-        if cb.from_user.id in admemes:
-            return await func(client, cb)
-        else:
-            await cb.answer('You ain\'t allowed!', show_alert=True)
-            return
-    return decorator                                                                       
+chat_id = None                                                                       
                                           
                                           
                                           
